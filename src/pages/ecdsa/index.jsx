@@ -122,7 +122,7 @@ export default function Ecdsa() {
 						The first module of the course centered on the inner workings of
 						blockchains and their cryptographical primitives.
 						<br />
-						Which is good, I had some notions of the topic but, because I was
+						Which is good, I had some notions on the topic but, because I was
 						eager to write code, I sort of skipped the non-solidity theory part
 						of other courses...
 					</p>
