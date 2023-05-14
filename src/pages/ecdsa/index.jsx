@@ -129,8 +129,8 @@ export default function Ecdsa() {
 				</div>
 			</div>
 			<p>
-				What does ECDSA stands for? 'Elliptic Curve Digital Signature
-				Algorithm', it's an algorithm for{" "}
+				What does ECDSA stand for? 'Elliptic Curve Digital Signature Algorithm',
+				it's an algorithm for{" "}
 				<a
 					href="https://en.wikipedia.org/wiki/Public-key_cryptography"
 					target="_blank"
