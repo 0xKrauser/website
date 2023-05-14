@@ -71,17 +71,17 @@ export default function DerivationPath({
 					<p style={{ overflowWrap: "break-word" }}>
 						Private key:
 						<br />
-						{privateKey}
+						{privateKey || "[Generate mnemonic first]"}
 					</p>
 					<p style={{ marginTop: 0, overflowWrap: "break-word" }}>
 						Public key:
 						<br />
-						{publicKey}
+						{publicKey || "[Generate mnemonic first]"}
 					</p>
 					<p style={{ marginTop: 0, overflowWrap: "break-word" }}>
 						Address:
 						<br />
-						{address}
+						{address || "[Generate mnemonic first]"}
 					</p>
 				</div>
 				<div className="button-container">

@@ -44,7 +44,9 @@ export default function Wallet({ derivationPath, setPrivateKey }) {
 	};
 
 	useEffect(() => {
-		handleConnect();
+		if (passphrase.every((word) => word !== "")) {
+			handleConnect();
+		}
 	}, [passphrase, derivationPath]);
 
 	return (

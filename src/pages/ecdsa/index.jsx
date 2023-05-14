@@ -15,12 +15,12 @@ import Windows from "../../components/Window";
 
 SyntaxHighlighter.registerLanguage("javascript", js);
 
-export default function Ecdsa({}) {
+export default function Ecdsa() {
 	const [privateKey, setPrivateKey] = useLocalStorage("privateKey", "");
 
 	// public key and address derivation
 	const [address, publicKey] = useMemo(() => {
-		if (!privateKey) return { address: undefined };
+		if (!privateKey) return [undefined, undefined];
 
 		const publicKey = secp256k1.getPublicKey(privateKey, false);
 
