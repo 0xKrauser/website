@@ -1,0 +1,30 @@
+{
+	"name": "website",
+	"private": true,
+	"version": "0.0.1",
+	"author": {
+		"name": "Krauser III",
+		"email": "detroitmetalcrypto@gmail.com"
+	},
+	"type": "module",
+	"scripts": {
+		"dev": "vite",
+		"build": "vite build",
+		"preview": "vite preview"
+	},
+	"dependencies": {
+		"axios": "^0.27.2",
+		"ethereum-cryptography": "^2.0.0",
+		"react": "^18.2.0",
+		"react-dom": "^18.2.0",
+		"react-router-dom": "^6.11.1",
+		"react-syntax-highlighter": "^15.5.0"
+	},
+	"devDependencies": {
+		"@types/react": "^18.0.17",
+		"@types/react-dom": "^18.0.6",
+		"@vitejs/plugin-react": "^4.0.0",
+		"sass": "^1.54.9",
+		"vite": "^4.3.5"
+	}
+}
