@@ -16,8 +16,11 @@ const pseudonyms = {
 	["0x364c828ee171616a39897688a831c2499ad972ec"]: ["seal", "seals"],
 	["0x8821bee2ba0df28761afff119d66390d594cd280"]: ["degod", "degods"],
 	["0x9c8ff314c9bc7f6e59a9d9225fb22946427edc03"]: ["noun", "nouns"],
+	["0x1d20a51f088492a0f1c57f047a9e30c9ab5c07ea"]: ["wassie", "wassies"],
 	["0xd3d9ddd0cf0a5f0bfb8f7fceae075df687eaebab"]: ["remilio", "remilios"],
 	["0x5Af0D9827E0c53E4799BB226655A1de152A425a5"]: ["milady", "miladys"],
+	["0xabcdb5710b88f456fed1e99025379e2969f29610"]: ["radbro", "radbros"],
+	["0x8fc0d90f2c45a5e7f94904075c952e0943cfccfd"]: ["pixelady", "pixeladys"],
 };
 
 export default pseudonyms;
