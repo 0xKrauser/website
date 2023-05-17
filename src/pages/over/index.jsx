@@ -1,10 +1,12 @@
 import { Portal } from "../../components/Portal";
 import Modal from "../../components/Modal";
 import { over_server } from "../../server";
-import { useState, useEffect, useMemo } from "react";
+import { useState, useEffect, useMemo, useRef } from "react";
 import useLocalStorage from "../../hooks/useLocalStorage";
 import usePrevious from "../../hooks/usePrevious";
 import pseudonyms from "../../constants/pseudonyms";
+import { toPng } from "html-to-image";
+import download from "downloadjs";
 const checkable = [
 	{ name: "miladys", address: "0x5Af0D9827E0c53E4799BB226655A1de152A425a5" }, // Milady
 	{ name: "remilios", address: "0xd3d9ddd0cf0a5f0bfb8f7fceae075df687eaebab" }, // Remilios
@@ -14,6 +16,7 @@ const timeout = 60_000; // 1 minute
 const customTimeout = 600_000; // 10 minutes
 
 export default function Over() {
+	const dataRef = useRef(null);
 	const [modal, setModal] = useState(false);
 
 	const [checkAgainst, setCheckAgainst] = useLocalStorage(
@@ -163,17 +166,23 @@ export default function Over() {
 		handleClose();
 	};
 
+	const handleImage = () => {
+		toPng(dataRef.current).then((dataUrl) => {
+			download(dataUrl, `over_${Date.now()}.png`);
+		});
+	};
 	return (
 		<div
 			style={{
 				display: "flex",
 				flexDirection: "column",
 				padding: "16px",
-				gap: "4rem",
 				minHeight: "100%",
 			}}
 		>
-			<div style={{ paddingTop: "4rem" }}>{sortedData}</div>
+			<div ref={dataRef} style={{ padding: "2rem", marginBottom: "2rem" }}>
+				{sortedData}
+			</div>
 			{modal && (
 				<Portal>
 					<Modal onClose={() => setModal(false)}>
@@ -223,7 +232,10 @@ export default function Over() {
 					</Modal>
 				</Portal>
 			)}
-			<button onClick={() => handleOpen(true)}>settings</button>
+			<div style={{ display: "flex", flexDirection: "column", gap: "1.5rem" }}>
+				<button onClick={() => handleImage()}>download</button>
+				<button onClick={() => handleOpen(true)}>settings</button>
+			</div>
 		</div>
 	);
 }

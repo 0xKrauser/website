@@ -548,3 +548,11 @@ button {
   flex-direction: column;
   gap: 16px;
 }
+
+.image-button-row {
+  display:flex;
+  gap: 1.5rem;
+  button {
+    flex: 1 0 auto;
+  }
+}
