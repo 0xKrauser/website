@@ -3,7 +3,7 @@ import { createPortal } from "react-dom";
 export default function Modal(props) {
 	const { title, onClose, children } = props;
 	return (
-		<div className="backdrop" onClick={() => onClose()}>
+		<div className="backdrop">
 			<div className="modal" onClick={(e) => e.stopPropagation()}>
 				<div className="modal-border-top">
 					<p className="modal-title">{title}</p>

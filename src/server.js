@@ -1,7 +1,11 @@
 import axios from "axios";
 
-const server = axios.create({
+const ecdsa_server = axios.create({
 	baseURL: "https://ecdsa-server-mock.onrender.com/",
 });
 
-export default server;
+const over_server = axios.create({
+	baseURL: "https://over-server.onrender.com/",
+});
+
+export { ecdsa_server, over_server };

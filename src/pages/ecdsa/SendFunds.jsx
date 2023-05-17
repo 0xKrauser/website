@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import server from "../../server";
+import { ecdsa_server } from "../../server";
 export default function SendFunds({
 	balance,
 	message,
@@ -15,7 +15,7 @@ export default function SendFunds({
 	const getAddresses = async () => {
 		const {
 			data: { balances },
-		} = await server.get(`addresses`);
+		} = await ecdsa_server.get(`addresses`);
 		setAddresses(balances || []);
 	};
 

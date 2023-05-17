@@ -4,7 +4,7 @@ import SeedWallet from "./SeedWallet";
 import SendFunds from "./SendFunds";
 import useLocalStorage from "../../hooks/useLocalStorage";
 import { useState, useMemo, useEffect } from "react";
-import server from "../../server";
+import { ecdsa_server } from "../../server";
 import { secp256k1 } from "ethereum-cryptography/secp256k1";
 import { toHex, utf8ToBytes } from "ethereum-cryptography/utils";
 import { keccak256 } from "ethereum-cryptography/keccak";
@@ -35,7 +35,7 @@ export default function Ecdsa() {
 	const getBalance = async () => {
 		const {
 			data: { balance },
-		} = await server.get(`balance/${address}`);
+		} = await ecdsa_server.get(`balance/${address}`);
 		setBalance(balance || 0);
 	};
 	useEffect(() => {

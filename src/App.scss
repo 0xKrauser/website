@@ -414,7 +414,7 @@ code {
       grid-template-rows: repeat(3, 1fr);
     }
   }
-  input {
+  input, textarea {
     background-color: transparent;
     box-sizing: border-box;
     width: 100%;    
@@ -428,38 +428,38 @@ code {
     font-size: 20px;
     line-height: 16px;
   }
-  button {
-    box-sizing: border-box;
-    @extend %cursor-pointer-click;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border: none;
-    padding: 32px 36px;
-    font-size: 24px;
-    font-family: 'somybmp';
-    height: auto;
-    color: white;
-    text-transform: uppercase;
-    background-color: transparent;
-    background: 
-    url("./assets/button01_top_left.png") top left no-repeat,url("./assets/button01_top_right.png") top right no-repeat, url("./assets/button01_bottom_right.png") bottom right no-repeat, url("./assets/button01_bottom_left.png") bottom left no-repeat, 
-    url("./assets/button01_bottom_center.png") bottom left 32px no-repeat, 
-    url("./assets/button01_top_center.png") top left 32px no-repeat, 
-    url("./assets/button01_center_left.png") top 32px left no-repeat, 
-    url("./assets/button01_center_right.png") top 32px right no-repeat, 
-    url("./assets/button01_background.png") top left no-repeat;
+}
+button {
+  box-sizing: border-box;
+  @extend %cursor-pointer-click;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: none;
+  padding: 32px 36px;
+  font-size: 24px;
+  font-family: 'somybmp';
+  height: auto;
+  color: white;
+  text-transform: uppercase;
+  background-color: transparent;
+  background: 
+  url("./assets/button01_top_left.png") top left no-repeat,url("./assets/button01_top_right.png") top right no-repeat, url("./assets/button01_bottom_right.png") bottom right no-repeat, url("./assets/button01_bottom_left.png") bottom left no-repeat, 
+  url("./assets/button01_bottom_center.png") bottom left 32px no-repeat, 
+  url("./assets/button01_top_center.png") top left 32px no-repeat, 
+  url("./assets/button01_center_left.png") top 32px left no-repeat, 
+  url("./assets/button01_center_right.png") top 32px right no-repeat, 
+  url("./assets/button01_background.png") top left no-repeat;
 
-    background-size: 36px 36px, 36px 36px, 36px 36px, 36px 36px, 
-    calc(100% - 60px) 12px, 
-    calc(100% - 60px) 16px, 
-    16px calc(100% - 60px), 
-    16px calc(100% - 60px), 
-    calc(100% - 12px) calc(100% - 12px);
-    p {
-      margin-bottom: -8px;
-      margin-top: 0;
-    }
+  background-size: 36px 36px, 36px 36px, 36px 36px, 36px 36px, 
+  calc(100% - 60px) 12px, 
+  calc(100% - 60px) 16px, 
+  16px calc(100% - 60px), 
+  16px calc(100% - 60px), 
+  calc(100% - 12px) calc(100% - 12px);
+  p {
+    margin-bottom: -8px;
+    margin-top: 0;
   }
 }
 
