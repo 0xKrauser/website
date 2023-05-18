@@ -4,7 +4,7 @@ import { over_server } from "../../server";
 import { useState, useEffect, useMemo, useRef } from "react";
 import useLocalStorage from "../../hooks/useLocalStorage";
 import usePrevious from "../../hooks/usePrevious";
-import pseudonyms from "../../constants/pseudonyms";
+import alias from "../../constants/alias";
 import { toPng } from "html-to-image";
 import download from "downloadjs";
 const checkable = [
@@ -115,7 +115,7 @@ export default function Over() {
 		);
 
 		let checkAgainstName =
-			pseudonyms[checkAgainst.address]?.[1] ||
+			alias[checkAgainst.address]?.[1] ||
 			checkAgainst.name ||
 			checkAgainstData.name;
 
@@ -125,7 +125,7 @@ export default function Over() {
 			);
 
 			checkAgainstName =
-				pseudonyms[previousCheckAgainst?.address]?.[1] ||
+				alias[previousCheckAgainst?.address]?.[1] ||
 				previousCheckAgainst?.name ||
 				previousCheckAgainst?.name;
 		}
@@ -146,7 +146,7 @@ export default function Over() {
 						checkAgainstData.floorAsk.price.amount.native >
 					1 ? (
 						<>
-							1 {pseudonyms[d.id]?.[0] || d.name} ={" "}
+							1 {alias[d.id]?.[0] || d.name} ={" "}
 							{(
 								d.floorAsk.price.amount.native /
 								checkAgainstData.floorAsk.price.amount.native
@@ -154,7 +154,7 @@ export default function Over() {
 							{checkAgainstName}
 						</>
 					) : (
-						<>It's over for {pseudonyms[d.id]?.[1] || d.name}</>
+						<>It's over for {alias[d.id]?.[1] || d.name}</>
 					)}
 				</div>
 			));

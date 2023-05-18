@@ -1,6 +1,6 @@
 import { useEffect, useMemo, useRef, useState } from "react";
 import { useSearchParams } from "react-router-dom";
-import pseudonyms from "../../constants/pseudonyms";
+import alias from "../../constants/alias";
 import { over_server } from "../../server";
 import useLocalStorage from "../../hooks/useLocalStorage";
 import { toPng } from "html-to-image";
@@ -129,8 +129,8 @@ export default function What() {
 		<div>
 			<div ref={imageRef} style={{ textAlign: "center", padding: "1rem" }}>
 				<h2>
-					With 1 {pseudonyms[sellParam][0] || data.sellData?.name} you could buy{" "}
-					{rate.toFixed(2)} {pseudonyms[buyParam][1] || data.buyData?.name}.
+					With 1 {alias[sellParam][0] || data.sellData?.name} you could buy{" "}
+					{rate.toFixed(2)} {alias[buyParam][1] || data.buyData?.name}.
 				</h2>
 
 				{rate < 1 ? (
@@ -142,8 +142,8 @@ export default function What() {
 				) : (
 					<>
 						<p>
-							These butiful {pseudonyms[buyParam][1] || data.buyData?.name}{" "}
-							could be yours
+							These butiful {alias[buyParam][1] || data.buyData?.name} could be
+							yours
 						</p>
 						<div
 							style={{
