@@ -7,8 +7,25 @@ export default function Home({}) {
 			<div>
 				<p>Hey! There's not much here (yet)</p>
 				<p>Soon(TM) I'll make a proper landing page</p>
-				<p>In the meanwhile, check my first article:</p>
+				<p>In the meanwhile, you can check my first article:</p>
 				<Link to="/ecdsa">Experiment 001: ECDSA Server</Link>
+				<p>Or play with my NFT gadgets</p>
+				<p>
+					<Link to="/over">It's over</Link>
+				</p>
+				<p>
+					<Link to="/whatareyouwaiting">What are you waiting for?</Link>
+				</p>
+				<p>
+					The code for this interface is open source and available on{" "}
+					<a
+						href="https://github.com/0xkrauser/website"
+						target="_blank"
+						rel="noopener noreferrer"
+					>
+						GitHub
+					</a>
+				</p>
 			</div>
 			<div>
 				<p>CREDITS:</p>

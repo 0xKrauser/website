@@ -232,7 +232,7 @@ export default function Over() {
 					</Modal>
 				</Portal>
 			)}
-			<div style={{ display: "flex", flexDirection: "column", gap: "1.5rem" }}>
+			<div className="over-button-container">
 				<button onClick={() => handleImage()}>download</button>
 				<button onClick={() => handleOpen(true)}>settings</button>
 			</div>

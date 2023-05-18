@@ -21,6 +21,10 @@ const pseudonyms = {
 	["0x5Af0D9827E0c53E4799BB226655A1de152A425a5"]: ["milady", "miladys"],
 	["0xabcdb5710b88f456fed1e99025379e2969f29610"]: ["radbro", "radbros"],
 	["0x8fc0d90f2c45a5e7f94904075c952e0943cfccfd"]: ["pixelady", "pixeladys"],
+	["0xbfe47d6d4090940d1c7a0066b63d23875e3e2ac5"]: [
+		"schizoposter",
+		"schizoposters",
+	],
 };
 
 export default pseudonyms;

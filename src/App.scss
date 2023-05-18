@@ -16,7 +16,11 @@
 * {
   box-sizing: content-box;
 }
-
+h2 {
+  @media screen and (max-width: 480px) {
+    font-size: 24px;
+  }
+}
 html,
 body {
   overflow: auto;
@@ -93,11 +97,13 @@ code {
 }
 
 .Content {
+  position:relative;
   width: 100%;
   display: flex;
+  flex-direction: column;
   justify-content: center;
+  align-items: center;
   overflow: auto;
-  position: relative;
 }
 @media screen and (min-width: 1928px) {
   .ViewportContainer {
@@ -554,5 +560,78 @@ button {
   gap: 1.5rem;
   button {
     flex: 1 0 auto;
+  }
+}
+
+.nft-grid {
+  width: 100%;
+  max-width: 560px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem 0;
+  >a {
+    color: unset;
+    text-decoration: unset;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  @media screen and (max-width: 480px) {
+    max-width: unset;
+    a{
+      font-size: 14px!important;      
+    }
+  }
+}
+
+.over-button-container {
+  display: flex;
+  flex-direction: column;
+  padding:1rem;
+  gap: 16px;
+  @media screen and (min-width: 1080px) {
+    flex-direction: row;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+  }
+    
+}
+
+.nft-row {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  >a {
+    color: unset;
+    text-decoration: unset;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    @media screen and (max-width: 480px) {
+      font-size: 14px!important;      
+    }
+  }
+}
+
+.logo-container {
+  box-sizing: border-box;
+  display:flex;
+  justify-content: center;
+  align-items:center;
+  position:fixed;
+  right: 0;
+  bottom: 0;
+  padding:1rem;
+  margin-right:40px;
+  height:88px;
+  img {
+    width: 50px;
+  }
+  @media screen and (max-width: 1080px) {
+    position: static;
+    width: 100%;
   }
 }
