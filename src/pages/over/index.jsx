@@ -5,6 +5,7 @@ import { useState, useEffect, useMemo, useRef } from "react";
 import useLocalStorage from "../../hooks/useLocalStorage";
 import usePrevious from "../../hooks/usePrevious";
 import alias from "../../constants/alias";
+import { Link } from "react-router-dom";
 import { toPng } from "html-to-image";
 import download from "downloadjs";
 const checkable = [
@@ -145,16 +146,24 @@ export default function Over() {
 					{d.floorAsk.price.amount.native /
 						checkAgainstData.floorAsk.price.amount.native >
 					1 ? (
-						<>
+						<Link
+							className="white-link"
+							to={`/whatareyouwaiting/?buy=${checkAgainst.address}&sell=${d.id}`}
+						>
 							1 {alias[d.id]?.[0] || d.name} ={" "}
 							{(
 								d.floorAsk.price.amount.native /
 								checkAgainstData.floorAsk.price.amount.native
 							).toFixed(2)}{" "}
 							{checkAgainstName}
-						</>
+						</Link>
 					) : (
-						<>It's over for {alias[d.id]?.[1] || d.name}</>
+						<Link
+							className="white-link"
+							to={`/whatareyouwaiting/?buy=${checkAgainst.address}&sell=${d.id}`}
+						>
+							It's over for {alias[d.id]?.[1] || d.name}
+						</Link>
 					)}
 				</div>
 			));

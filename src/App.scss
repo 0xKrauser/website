@@ -633,5 +633,11 @@ button {
   @media screen and (max-width: 1080px) {
     position: static;
     width: 100%;
+    margin: 0;
   }
+}
+
+.white-link{
+  color: unset;
+  text-decoration: unset;
 }

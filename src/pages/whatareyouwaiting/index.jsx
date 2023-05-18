@@ -32,8 +32,8 @@ export default function What() {
 	const rate = useMemo(() => {
 		if (!data.buyData) return 0;
 		return (
-			data.buyData.floorAsk.price.amount.native /
-			data.sellData.floorAsk.price.amount.native
+			data.sellData.floorAsk.price.amount.native /
+			data.buyData.floorAsk.price.amount.native
 		);
 	}, [data]);
 	const [buyForm, setBuyForm] = useState(buyParam);
@@ -71,14 +71,23 @@ export default function What() {
 			const { data } = await over_server.get(
 				`compare/?buy=${buyParam}&sell=${sellParam}`
 			);
+			const buyData =
+				data[
+					data.findIndex((d) => d.id.toLowerCase() === buyParam.toLowerCase())
+				];
+			const sellData =
+				data[
+					data.findIndex((d) => d.id.toLowerCase() === sellParam.toLowerCase())
+				];
+
 			const rate =
-				data[0].floorAsk.price.amount.native /
-				data[1].floorAsk.price.amount.native;
+				sellData.floorAsk.price.amount.native /
+				buyData.floorAsk.price.amount.native;
 			const listings = rate < 1 ? 1 : rate > 50 ? 50 : Math.floor(rate);
 			const { data: listingsData } = await over_server.get(
 				`listings/?max=${listings + 5}&contract=${buyParam}`
 			);
-			setData({ buyData: data[0], sellData: data[1], listings: listingsData });
+			setData({ buyData, sellData, listings: listingsData });
 		};
 		fetch();
 	}, [sellParam, buyParam]);
@@ -98,7 +107,7 @@ export default function What() {
 				return loc;
 			},
 			{
-				budget: data.buyData.floorAsk.price.amount.native,
+				budget: data.sellData.floorAsk.price.amount.native,
 				listings: [],
 				indexes: [],
 			}
