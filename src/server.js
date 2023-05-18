@@ -5,7 +5,7 @@ const ecdsa_server = axios.create({
 });
 
 const over_server = axios.create({
-	baseURL: "http://localhost:3042/", // "https://over-server.onrender.com/"
+	baseURL: "https://over-server.onrender.com/", // "http://localhost:3042/"
 });
 
 export { ecdsa_server, over_server };
