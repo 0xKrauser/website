@@ -143,7 +143,14 @@ export default function What() {
 		<div>Loadin'</div>
 	) : (
 		<div>
-			<div ref={imageRef} style={{ textAlign: "center", padding: "1rem" }}>
+			<div
+				ref={imageRef}
+				style={{
+					textAlign: "center",
+					padding: "1rem",
+					backgroundColor: "black",
+				}}
+			>
 				<h2>
 					With 1 {alias?.[sellParam]?.[0] || data.sellData?.name} you could buy{" "}
 					{rate.toFixed(2)} {alias?.[buyParam]?.[1] || data.buyData?.name}.

@@ -189,7 +189,14 @@ export default function Over() {
 				minHeight: "100%",
 			}}
 		>
-			<div ref={dataRef} style={{ padding: "2rem", marginBottom: "2rem" }}>
+			<div
+				ref={dataRef}
+				style={{
+					padding: "2rem",
+					marginBottom: "2rem",
+					backgroundColor: "black",
+				}}
+			>
 				{sortedData}
 			</div>
 			{modal && (
