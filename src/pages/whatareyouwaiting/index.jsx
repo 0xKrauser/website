@@ -113,21 +113,28 @@ export default function What() {
 			}
 		);
 		return [
-			listings.map((listing) => (
-				<a
-					key={listing.criteria.data.token.name}
-					href={
-						listing.source.url.split("/assets/")[0] +
-						"/assets/ethereum/" +
-						listing.source.url.split("/assets/")[1]
-					}
-					target="_blank"
-					rel="noopener noreferrer"
-				>
-					<img src={listing.criteria.data.token.image} alt="" width="100px" />
-					{listing.criteria.data.token.name}
-				</a>
-			)),
+			listings.map((listing, i) => {
+				if (i < 9)
+					return (
+						<a
+							key={listing.criteria.data.token.name}
+							href={
+								listing.source.url.split("/assets/")[0] +
+								"/assets/ethereum/" +
+								listing.source.url.split("/assets/")[1]
+							}
+							target="_blank"
+							rel="noopener noreferrer"
+						>
+							<img
+								src={listing.criteria.data.token.image}
+								alt=""
+								width="100px"
+							/>
+							{listing.criteria.data.token.name}
+						</a>
+					);
+			}),
 			listings.length,
 		];
 	}, [data]);
@@ -138,8 +145,8 @@ export default function What() {
 		<div>
 			<div ref={imageRef} style={{ textAlign: "center", padding: "1rem" }}>
 				<h2>
-					With 1 {alias[sellParam][0] || data.sellData?.name} you could buy{" "}
-					{rate.toFixed(2)} {alias[buyParam][1] || data.buyData?.name}.
+					With 1 {alias?.[sellParam]?.[0] || data.sellData?.name} you could buy{" "}
+					{rate.toFixed(2)} {alias?.[buyParam]?.[1] || data.buyData?.name}.
 				</h2>
 
 				{rate < 1 ? (
@@ -151,8 +158,9 @@ export default function What() {
 				) : (
 					<>
 						<p>
-							These butiful {alias[buyParam][1] || data.buyData?.name} could be
-							yours
+							These{memoLength > 9 ? <span> 9</span> : null} butiful{" "}
+							{alias?.[buyParam]?.[1] || data.buyData?.name}
+							{memoLength > 9 ? <span> and more</span> : null} could be yours
 						</p>
 						<div
 							style={{
@@ -164,6 +172,7 @@ export default function What() {
 							<div className={memoLength > 2 ? "nft-grid" : "nft-row"}>
 								{memoData}
 							</div>
+
 							<h2>What are u waiting for???</h2>
 						</div>
 					</>
